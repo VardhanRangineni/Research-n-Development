@@ -1,0 +1,138 @@
+.header {
+    height: 70px;
+    background-color: #fff;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.header-search {
+    width: 400px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.6rem 1rem 0.6rem 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.search-input:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(193, 19, 26, 0.1);
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+}
+
+.action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #e9ecef;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.action-btn:hover {
+    background-color: #f8f9fa;
+    color: var(--primary-color);
+}
+
+.badge-dot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    border: 1px solid white;
+}
+
+.notifications-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    width: 380px;
+    max-height: 420px;
+    overflow: auto;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    z-index: 1100;
+    padding: 0.75rem;
+}
+
+.notifications-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #212529;
+}
+
+.notifications-empty {
+    color: #6c757d;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+}
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.notification-item {
+    border: 1px solid #f0f1f3;
+    border-radius: 8px;
+    padding: 0.5rem;
+    background: #fafbfc;
+}
+
+.notification-type {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #c1131a;
+    margin-bottom: 0.2rem;
+}
+
+.notification-text {
+    font-size: 0.82rem;
+    color: #343a40;
+}
+
+.notification-date {
+    font-size: 0.75rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}

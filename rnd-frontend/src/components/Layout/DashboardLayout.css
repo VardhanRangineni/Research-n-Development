@@ -1,0 +1,23 @@
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content-wrapper {
+    flex: 1;
+    /* min-width: 0 is critical — without it a flex child grows to fit its content
+       (e.g. a wide table), causing the whole page to scroll horizontally. */
+    min-width: 0;
+    margin-left: 260px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.page-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-x: hidden;
+}

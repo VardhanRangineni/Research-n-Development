@@ -1,0 +1,120 @@
+.dashboard-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.dashboard-hero {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(193, 19, 26, 0.14), transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(193, 19, 26, 0.08), transparent 50%),
+        linear-gradient(120deg, #ffffff 0%, #fff7f7 100%);
+    border: 1px solid #f2d7d8;
+    border-radius: 16px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.dashboard-hero-content h2 {
+    letter-spacing: -0.01em;
+}
+
+.dashboard-role-pill {
+    display: inline-block;
+    background-color: #fee9ea;
+    color: #8d0e13;
+    border: 1px solid #f7c9cb;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.65rem;
+    margin-bottom: 0.6rem;
+}
+
+.dashboard-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid #f7c9cb;
+    background: #fff;
+    border-radius: 999px;
+    color: #8d0e13;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.dashboard-kpi-card {
+    border: 1px solid #f3d8d9;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #fffafa 100%);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.dashboard-kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(99, 16, 18, 0.08);
+}
+
+.dashboard-kpi-title {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+}
+
+.dashboard-kpi-topline {
+    font-size: 0.72rem;
+    color: #9a4b4e;
+    letter-spacing: 0.09em;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.dashboard-kpi-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.dashboard-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.dashboard-panel-card {
+    border: 1px solid #f0f0f0;
+    border-radius: 14px;
+}
+
+.dashboard-empty {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.dashboard-stage-bar {
+    height: 8px;
+    border-radius: 999px;
+    background-color: #e9ecef;
+    overflow: hidden;
+}
+
+.dashboard-stage-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #c1131a, #db4f55);
+}
+
+@media (max-width: 768px) {
+    .dashboard-hero {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .dashboard-kpi-value {
+        font-size: 1.5rem;
+    }
+}

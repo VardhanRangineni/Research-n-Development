@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Backend verify
+        run: ./rnd-backend/mvnw -f rnd-backend/pom.xml clean verify
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: rnd-frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: rnd-frontend
+
+      - name: Lint
+        run: npm run lint
+        working-directory: rnd-frontend
+
+      - name: Test
+        run: npm run test
+        working-directory: rnd-frontend
+
+      - name: Build
+        run: npm run build
+        working-directory: rnd-frontend

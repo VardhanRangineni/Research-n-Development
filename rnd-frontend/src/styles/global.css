@@ -1,0 +1,57 @@
+:root {
+  --primary-color: #c1131a;
+  /* MedPlus Brand Color */
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --bg-light: #f8f9fa;
+  --text-dark: #212529;
+  --font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Bootstrap theme tokens mapped to MedPlus brand */
+  --bs-primary: var(--primary-color);
+  --bs-primary-rgb: 193, 19, 26;
+  --bs-link-color: var(--primary-color);
+  --bs-link-hover-color: #a10f15;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--bg-light);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Premium utilities */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.shadow-premium {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Force Bootstrap primary buttons to match MedPlus brand red */
+.btn-primary {
+  --bs-btn-bg: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: #a10f15;
+  --bs-btn-hover-border-color: #990e14;
+  --bs-btn-active-bg: #920d13;
+  --bs-btn-active-border-color: #8a0c12;
+  --bs-btn-disabled-bg: var(--primary-color);
+  --bs-btn-disabled-border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--primary-color);
+  --bs-btn-hover-border-color: var(--primary-color);
+  --bs-btn-active-bg: #a10f15;
+  --bs-btn-active-border-color: #990e14;
+  --bs-btn-disabled-color: var(--primary-color);
+  --bs-btn-disabled-border-color: var(--primary-color);
+}
