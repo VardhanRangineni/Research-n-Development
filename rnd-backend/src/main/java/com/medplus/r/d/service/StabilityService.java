@@ -656,17 +656,32 @@ public class StabilityService {
         LocalDate today = LocalDate.now();
         List<StabilityNotificationResponse> notifications = new ArrayList<>();
         List<StabilityProtocol> protocols = stabilityProtocolRepository.findAllByOrderByCreatedAtDesc();
+        if (protocols.isEmpty()) {
+            return notifications;
+        }
+
+        List<Long> protocolIds = protocols.stream().map(StabilityProtocol::getId).toList();
+        Set<Long> projectIds = protocols.stream()
+                .map(StabilityProtocol::getProjectRefId)
+                .collect(Collectors.toCollection(LinkedHashSet::new));
+        Map<Long, Project> projectsById = projectRepository.findAllById(projectIds).stream()
+                .collect(Collectors.toMap(Project::getId, project -> project));
+
+        List<StabilityObservation> allObservations =
+                stabilityObservationRepository.findByProtocolRefIdInOrderByProtocolRefIdAscConditionLabelAscIntervalLabelAsc(
+                        protocolIds);
+        Map<Long, List<StabilityObservation>> observationsByProtocol = allObservations.stream()
+                .collect(Collectors.groupingBy(StabilityObservation::getProtocolRefId, LinkedHashMap::new, Collectors.toList()));
 
         for (StabilityProtocol protocol : protocols) {
-            Optional<Project> projectOpt = projectRepository.findById(protocol.getProjectRefId());
-            if (projectOpt.isEmpty()) {
+            Project project = projectsById.get(protocol.getProjectRefId());
+            if (project == null) {
                 continue;
             }
 
-            Project project = projectOpt.get();
             List<String> conditions = parseJsonList(protocol.getConditionsJson());
             List<String> intervals = parseJsonList(protocol.getIntervalsJson());
-            List<StabilityObservation> observations = stabilityObservationRepository.findByProtocolRefId(protocol.getId());
+            List<StabilityObservation> observations = observationsByProtocol.getOrDefault(protocol.getId(), List.of());
 
             Map<String, StabilityObservation> observationMap = observations.stream()
                     .collect(Collectors.toMap(
