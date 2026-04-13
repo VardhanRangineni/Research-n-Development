@@ -10,9 +10,9 @@
       "env": {
         "SPRING_PROFILES_ACTIVE": "dev",
         "DB_URL": "jdbc:mysql://localhost:3306/rnd_db?createDatabaseIfNotExist=true&serverTimezone=UTC",
-        "APP_HEAD_PASSWORD": "admin",
-        "APP_HEAD_USERNAME": "admin",
-        "APP_HEAD_EMAIL": "admin@example.com",
+        "APP_HEAD_PASSWORD": "Admin@123",
+        "APP_HEAD_USERNAME": "Vardhan R",
+        "APP_HEAD_EMAIL": "vardhan.r@medplusindia.com",
         "DB_USERNAME": "root",
         "DB_PASSWORD": "root",
         "CORS_ALLOWED_ORIGINS": "http://localhost:5173,http://localhost:5174"
