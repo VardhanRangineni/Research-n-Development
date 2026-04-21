@@ -20,5 +20,10 @@ public class ProjectDocumentDTO {
     private Long fileSize;
     private String uploadedBy;
     private LocalDateTime uploadedAt;
-    private String downloadUrl;
+    private String imageServerUrl;
+    private String imagePath;
+    private String thumbnailPath;
+    private String originalImageName;
+    private String fullImageUrl;
+    private String fullThumbnailUrl;
 }

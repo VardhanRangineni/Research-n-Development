@@ -31,14 +31,23 @@ public class ProjectDocument {
     @Column(nullable = false)
     private String originalFileName;
 
-    @Column(nullable = false, unique = true)
-    private String storedFileName;
-
     @Column(nullable = false)
     private String contentType;
 
     @Column(nullable = false)
     private Long fileSize;
+
+    @Column(length = 500)
+    private String imageServerUrl;
+
+    @Column(length = 1000)
+    private String imagePath;
+
+    @Column(length = 1000)
+    private String thumbnailPath;
+
+    @Column(length = 500)
+    private String originalImageName;
 
     @Column(nullable = false)
     private String uploadedBy;

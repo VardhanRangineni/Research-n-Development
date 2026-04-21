@@ -221,7 +221,7 @@ const DocumentsPage = () => {
                                                             <Button type="button"
                                                                 variant="outline-primary"
                                                                 size="sm"
-                                                                onClick={() => window.open(doc.downloadUrl, '_blank', 'noopener,noreferrer')}
+                                                                onClick={() => window.open(doc.fullImageUrl, '_blank', 'noopener,noreferrer')}
                                                             >
                                                                 <MdOpenInNew size={16} className="me-1" />Open
                                                             </Button>
